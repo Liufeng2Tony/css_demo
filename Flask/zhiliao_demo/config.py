@@ -1,0 +1,21 @@
+# 配置文件
+
+
+import os
+
+DEBUG = True
+
+SECRET_KEY = os.urandom(24)
+
+DIALECT = "mysql"
+DRIVER = "pymysql"
+USERNAME = "root"
+PASSWORD = "12345678"
+HOST = "127.0.0.1"
+PORT = "3306"
+DATABASE = "zhiliao_demo"
+
+SQLALCHEMY_DATABASE_URI = "{}+{}://{}:{}@{}:{}/{}?uft8".format(
+    DIALECT,DRIVER,USERNAME,PASSWORD,HOST,PORT,DATABASE)
+QLALCHEMY_COMMIT_ON_TEARDOWN = True
+SQLALCHEMY_TRACK_MODIFICATIONS = True
